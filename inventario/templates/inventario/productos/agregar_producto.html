@@ -1,0 +1,38 @@
+
+{% extends 'inventario/base.html' %}
+{% block contenido %}
+
+<h2>Agregar Producto</h2>
+
+<form method="POST" class="card p-4 shadow">
+    {% csrf_token %}
+
+    <div class="mb-3">
+        <label class="form-label">Nombre</label>
+        <input type="text" name="nombre" class="form-control" required>
+    </div>
+
+    <div class="mb-3">
+        <label class="form-label">Categoría</label>
+        <input type="text" name="categoria" class="form-control" required>
+    </div>
+
+    <div class="mb-3">
+        <label class="form-label">Cantidad</label>
+        <input type="number" name="cantidad" class="form-control" required>
+    </div>
+
+    <div class="mb-3">
+        <label class="form-label">Stock mínimo</label>
+        <input type="number" name="stock_minimo" class="form-control" required>
+    </div>
+
+    <div class="mb-3">
+        <label class="form-label">Descripción</label>
+        <textarea name="descripcion" class="form-control"></textarea>
+    </div>
+
+    <button class="btn btn-primary">Guardar</button>
+</form>
+
+{% endblock %}

@@ -1,0 +1,38 @@
+
+{% extends 'inventario/base.html' %}
+{% block contenido %}
+
+<h2>Editar Producto</h2>
+
+<form method="POST" class="card p-4 shadow">
+    {% csrf_token %}
+
+    <div class="mb-3">
+        <label class="form-label">Nombre</label>
+        <input type="text" name="nombre" value="{{ producto.nombre }}" class="form-control">
+    </div>
+
+    <div class="mb-3">
+        <label class="form-label">Categoría</label>
+        <input type="text" name="categoria" value="{{ producto.categoria }}" class="form-control">
+    </div>
+
+    <div class="mb-3">
+        <label class="form-label">Cantidad</label>
+        <input type="number" name="cantidad" value="{{ producto.cantidad }}" class="form-control">
+    </div>
+
+    <div class="mb-3">
+        <label class="form-label">Stock mínimo</label>
+        <input type="number" name="stock_minimo" value="{{ producto.stock_minimo }}" class="form-control">
+    </div>
+
+    <div class="mb-3">
+        <label class="form-label">Descripción</label>
+        <textarea name="descripcion" class="form-control">{{ producto.descripcion }}</textarea>
+    </div>
+
+    <button class="btn btn-primary">Actualizar</button>
+</form>
+
+{% endblock %}
